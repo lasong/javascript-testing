@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sspringer82/jsdays.git"
+    "url": "git+https://github.com/lasong/javascript-testing.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sspringer82/jsdays/issues"
+    "url": "https://github.com/lasong/javascript-testing/issues"
   },
-  "homepage": "https://github.com/sspringer82/jsdays#readme",
+  "homepage": "https://github.com/lasong/javascript-testing#readme",
   "devDependencies": {
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
