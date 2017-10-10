@@ -16,12 +16,38 @@ describe('async', function() {
   it('should call a callback using spies', function() {
     const  inputValue = 'Foo Bar';
     const callback = jasmine.createSpy('007');
-    callback.and.callFake((y) => {
-      expect(y).toEqual(inputValue);
-      expect(callback).toHaveBeenCalledWith(inputValue);
-    })
-    jasmine.clock().tick(400);
 
     asyncFunction(callback, inputValue, 400);
+    jasmine.clock().tick(400);
+
+    expect(callback).toHaveBeenCalledWith(inputValue);
   });
+
+  it('should call a callback using spies', function() {
+    const  inputValue = 'Foo Bar';
+    const callback = jasmine.createSpy('007');
+
+    asyncFunction(callback, inputValue, 400);
+    jasmine.clock().tick(400);
+
+    expect(callback).toHaveBeenCalledWith(inputValue);
+  });
+});
+
+describe('async with Promises', function () {
+  it('should resolve with "It simply works', function () {
+    const result = asyncWithPromise(true);
+
+    return result.then((value) => {
+      expect(value).toEqual('It simply works');
+    });
+  })
+
+  it('should reject with "It does not work"', function () {
+    const result = asyncWithPromise(false);
+
+    return result.catch(error => {
+      expect(error).toEqual('It does not work');
+    });
+  })
 });
