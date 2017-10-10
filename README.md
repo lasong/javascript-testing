@@ -8,3 +8,14 @@
 
   npm test (package.json > scripts > test)
 ```
+
+
+# Skip & focus
+
+xit xdescribe -> skip test
+fit fdescribe -> focus test
+
+
+# Documentation
+
+https://jasmine.github.io/edge/introduction
