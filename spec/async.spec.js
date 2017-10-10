@@ -43,11 +43,15 @@ describe('async with Promises', function () {
     });
   })
 
-  it('should reject with "It does not work"', function () {
+  it('should reject with "It does not work"', function (done) {
     const result = asyncWithPromise(false);
 
-    return result.catch(error => {
+    return result.then(() => {
+      fail('Value should have been undefined');
+      done();
+    }).catch(error => {
       expect(error).toEqual('It does not work');
+      done();
     });
   })
 });
